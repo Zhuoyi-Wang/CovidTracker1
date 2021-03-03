@@ -18,22 +18,13 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Intent intent = getIntent();
+
         if (intent.hasExtra(INTENT_MESSAGE)) {
-            TextView detailMessage = findViewById(R.id.tvDetailMessage);
-            detailMessage.setText(intent.getStringExtra(INTENT_MESSAGE));
+            String intentMessage = intent.getStringExtra(INTENT_MESSAGE);
         }
 
-        Button button = findViewById(R.id.btShowVideo);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showVideo("https://www.youtube.com/watch?v=BtN-goy9VOY");
-            }
-        });
+
+        };
     }
 
-    private void showVideo(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
-    }
-}
+
